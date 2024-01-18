@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <img src="../assets/logos/WellnessSync-logos_transparent.png" alt="Logo" class="logo">
+    <ion-item class="ion-margin-top">
+      <ion-input
+        type="text"
+        [(ngModel)]="username"
+        placeholder="Username"
+        class="login-input"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+      <ion-input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Password"
+        class="login-input"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-note class="register-note">
+      <a routerLink="/register">Forgot password?</a>
+    </ion-note>
+    <ion-button expand="full" class="login-button" (click)="login()">
+      Login
+    </ion-button>
+    <ion-note class="register-note">
+      Or
+    </ion-note>
+    <ion-button fill="outline" expand="full" class="google-login-button" (click)="googleSignin()">
+      <img src="../assets/logos/google-logo-9824.png" alt="Google logo" class="google-logo">
+      Sign in with Google
+     </ion-button>
+    
+    <ion-note class="register-note">
+      Don't have an account? <a routerLink="/register">Register here</a>
+    </ion-note>
+  </div>
+ </ion-content>
+ 

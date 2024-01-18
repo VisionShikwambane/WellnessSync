@@ -1,0 +1,44 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px; /* Adjust this value based on the height of your logo */
+   }
+   
+   .logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+   }
+   
+   .login-input {
+    width: auto;
+ 
+   }
+   
+   .login-button {
+    margin-top: 20px;
+    width: 200px;
+   }
+   
+   .register-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: medium;
+   }
+   
+   .google-login-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    width: 200px;
+   }
+
+   .google-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+   }
+   
