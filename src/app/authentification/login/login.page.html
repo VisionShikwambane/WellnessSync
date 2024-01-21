@@ -1,24 +1,37 @@
 <ion-content class="ion-padding">
   <div class="login-container">
     <img src="../assets/logos/WellnessSync-logos_transparent.png" alt="Logo" class="logo">
-    <ion-item class="ion-margin-top">
+    <form [formGroup]="loginForm" class="centered-notes">
+    <ion-item class="ion-margin-top" >
       <ion-input
         type="text"
-        [(ngModel)]="username"
+        formControlName="username"
         placeholder="Username"
         class="login-input"
         required
       ></ion-input>
     </ion-item>
+    <ion-note *ngIf="usernameControl && usernameControl.hasError('required') && (usernameControl.dirty || usernameControl.touched)" class="custom-note">
+      Username is required.
+    </ion-note>
+    
+    <ion-note *ngIf="usernameControl && usernameControl.hasError('pattern') && (usernameControl.dirty || usernameControl.touched)" class="custom-note">
+      Username is not a valid email.
+    </ion-note>
+    
     <ion-item class="ion-margin-top">
       <ion-input
         type="password"
-        [(ngModel)]="password"
+        formControlName="password"
         placeholder="Password"
         class="login-input"
         required
       ></ion-input>
     </ion-item>
+    <ion-note *ngIf="passwordControl && passwordControl.hasError('required') && (passwordControl.dirty || passwordControl.touched)" class="custom-note">
+      Password is required.
+    </ion-note>
+  </form>
     <ion-note class="register-note">
       <a routerLink="/register">Forgot password?</a>
     </ion-note>
@@ -28,14 +41,16 @@
     <ion-note class="register-note">
       Or
     </ion-note>
-    <ion-button fill="outline" expand="full" class="google-login-button" (click)="googleSignin()">
+    <ion-button fill="outline" expand="full" class="google-login-button" (click)="googleSignin()" [disabled]="!loginForm.valid">
       <img src="../assets/logos/google-logo-9824.png" alt="Google logo" class="google-logo">
       Sign in with Google
      </ion-button>
-    
-    <ion-note class="register-note">
-      Don't have an account? <a routerLink="/sign-up">Register here</a>
+
+     <ion-note class="register-note">
+      Don't have an account? <a [routerLink]="['/sign-up']">Register here</a>
     </ion-note>
+    
+    
   </div>
  </ion-content>
  
