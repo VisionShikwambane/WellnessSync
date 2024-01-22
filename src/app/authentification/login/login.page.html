@@ -15,7 +15,7 @@
       Username is required.
     </ion-note>
     
-    <ion-note *ngIf="usernameControl && usernameControl.hasError('pattern') && (usernameControl.dirty || usernameControl.touched)" class="custom-note">
+    <ion-note *ngIf="usernameControl && usernameControl.hasError('pattern')" class="custom-note">
       Username is not a valid email.
     </ion-note>
     
@@ -33,7 +33,7 @@
     </ion-note>
   </form>
     <ion-note class="register-note">
-      <a routerLink="/register">Forgot password?</a>
+      <a (click)="presentAlert()">Forgot password?</a>
     </ion-note>
     <ion-button expand="full" class="login-button" (click)="login()">
       Login
@@ -50,7 +50,6 @@
       Don't have an account? <a [routerLink]="['/sign-up']">Register here</a>
     </ion-note>
     
-    
   </div>
+
  </ion-content>
- 

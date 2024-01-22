@@ -15,52 +15,46 @@
   </div>
 
   <ion-list lines="full">
+  <form [formGroup]="registerForm" class="centered-notes">
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
-      <ion-input type="text" [(ngModel)]="name" name="name" required placeholder="Name"></ion-input>
+      <ion-input type="text" formControlName="name" name="name" required placeholder="Name"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
-      <ion-input type="text" [(ngModel)]="surname" name="surname" required placeholder="Surname"></ion-input>
+      <ion-input type="text" formControlName="surname" name="surname" required placeholder="Surname"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="call" slot="start"></ion-icon>
-      <ion-input type="tel" [(ngModel)]="phoneNumber" name="phoneNumber" required placeholder="Phone number"></ion-input>
+      <ion-input type="tel" formControlName="phoneNumber" name="phoneNumber" required placeholder="Phone number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="mail" slot="start"></ion-icon>
-      <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="person-circle" slot="start"></ion-icon>
-      <ion-select [(ngModel)]="title" name="title" required placeholder="Title">
-        <ion-select-option value="male">Mr</ion-select-option>
-        <ion-select-option value="female">Mrs</ion-select-option>
-      </ion-select>
+      <ion-input type="email" formControlName="email" name="email" required placeholder="Email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="transgender" slot="start"></ion-icon>
-      <ion-select [(ngModel)]="gender" name="gender" required placeholder="Gender">
-        <ion-select-option value="male">Male</ion-select-option>
-        <ion-select-option value="female">Female</ion-select-option>
-        <ion-select-option value="other">Other</ion-select-option>
+      <ion-select formControlName="title" name="title" required placeholder="Title">
+        <ion-select-option value="Mr">Mr</ion-select-option>
+        <ion-select-option value="Ms">Ms</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-icon name="lock-closed" slot="start"></ion-icon>
-      <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Password"></ion-input>
+      <ion-input type="password" formControlName="password" name="password" required placeholder="Password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="lock-closed" slot="start"></ion-icon>
-      <ion-input type="password" [(ngModel)]="ConfirmPassword" name="Confirm Password" required placeholder="Confirm Password"></ion-input>
+      <ion-input type="password" formControlName="ConfirmPassword" name="Confirm Password" required placeholder="Confirm Password"></ion-input>
     </ion-item>
+  </form>
+
   </ion-list>
 
   <ion-button expand="full" color="primary" (click)="register()">Register</ion-button>
