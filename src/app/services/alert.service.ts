@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { text } from 'ionicons/icons';
+import { ToastController } from '@ionic/angular';
+import { add, person, mail, call, transgender, lockClosed, personCircle } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AlertService {
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private toastController: ToastController) 
+  {
+    addIcons({add, person, mail, call, transgender, lockClosed, personCircle})
+  }
 
   async presentAlert(header: string, subHeader: string, message: string, ) {
     const alert = await this.alertController.create({
@@ -39,6 +45,20 @@ export class AlertService {
   
     await alert.present();
   }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom', msg: string, pst: number) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: pst,
+      position: position,
+      icon: ""
+      
+      
+    });
+
+    await toast.present();
+  }
+
 
   
 

@@ -72,7 +72,9 @@ export class LoginPage implements OnInit {
 
   
 
- 
+ async presentToast(){
+  this.alertService.presentToast("bottom", "thr", 1500)
+ }
 
   
 

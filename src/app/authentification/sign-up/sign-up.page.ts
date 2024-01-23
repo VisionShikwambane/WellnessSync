@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angul
 import { RouterModule } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
 import { HttpServiceService } from 'src/app/services/http-service.service';
-import { Registration } from 'src/app/models/register-model';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -70,8 +70,8 @@ export class SignUpPage implements OnInit {
             password: this.registerForm.value.password,
           
           };
-          
-          console.log(this.newUserInfo)
+
+         // console.log(this.newUserInfo)
           this.httpService.Register(this.newUserInfo).subscribe(
             (response) => {
               console.log('Registration successful', response);
