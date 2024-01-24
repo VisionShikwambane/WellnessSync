@@ -7,7 +7,6 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angul
 import { AlertService } from 'src/app/services/alert.service';
 import { AuthService } from '../auth-services/auth.service';
 import { JwtService } from '../auth-services/jwt.service';
-import { Token } from '@angular/compiler';
 import { Router } from '@angular/router';
 
 
@@ -73,17 +72,15 @@ export class LoginPage implements OnInit {
           this.serviceJwt.setToken(token);
           var role = this.serviceJwt.decodeUserRoleFromToken(token)
           if(role === "Patient"){
-            this.route.navigate(['/employee-home']);
+            this.route.navigate(['/patient']);
           }
           else if (role === "Doctor"){
-            this.route.navigate(['']);
+            this.route.navigate(['/doctor']);
           }
           else if (role === "Admin"){
-            this.route.navigate(['']);
+            this.route.navigate(['/admin']);
           }
-          else{
-            this.route.navigate(['']);
-          }
+          
         },
         async error => {
           await this.alertService.presentErrorToast("bottom", error.error, 1500)
@@ -94,7 +91,7 @@ export class LoginPage implements OnInit {
     else {
 
       this.alertService.presentAlert("Alert", "", "Please fill in all the login details");
-      
+
     }
   }
 
@@ -112,17 +109,7 @@ export class LoginPage implements OnInit {
 
   }
 
-
-  
-
- async presentToast(){
-  this.alertService.presentErrorToast("bottom", "thr", 1500)
- }
-
-  
- async presentToast2(){
-  this.alertService.presentSuccessToast("bottom", "thr")
- }
+ 
 
 
 
