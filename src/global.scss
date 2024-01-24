@@ -25,3 +25,14 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+ion-toast.custom-error-toast {
+    --background: #000000;
+    --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+    --color: #ffffff;
+  }
+  
+  ion-toast.custom-success-toast {
+    --background: #2562d1;
+    --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+    --color: #ffffff;
+  }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-import { add, person, mail, call, transgender, lockClosed, personCircle } from 'ionicons/icons';
+import { alertCircle, person, happy} from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
 
@@ -11,7 +11,7 @@ import { addIcons } from 'ionicons';
 export class AlertService {
   constructor(private alertController: AlertController, private toastController: ToastController) 
   {
-    addIcons({add, person, mail, call, transgender, lockClosed, personCircle})
+    addIcons({alertCircle, person, happy})
   }
 
   async presentAlert(header: string, subHeader: string, message: string, ) {
@@ -46,18 +46,35 @@ export class AlertService {
     await alert.present();
   }
 
-  async presentToast(position: 'top' | 'middle' | 'bottom', msg: string, pst: number) {
+  async presentErrorToast(position: 'top' | 'middle' | 'bottom', msg: string, pst: number) {
     const toast = await this.toastController.create({
       message: msg,
       duration: pst,
       position: position,
-      icon: ""
+      cssClass: "custom-error-toast",
+      icon: "alert-circle"
+
       
       
     });
 
     await toast.present();
   }
+
+  async presentSuccessToast(position: 'top' | 'middle' | 'bottom', msg: string) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 500,
+      position: position,
+      cssClass: "custom-success-toast",
+      icon: "happy"
+       
+    });
+
+    await toast.present();
+  }
+
+  
 
 
   

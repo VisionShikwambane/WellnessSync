@@ -8,6 +8,7 @@ import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { importProvidersFrom } from '@angular/core';
 
+
 if (environment.production) {
   enableProdMode();
 }
@@ -18,5 +19,6 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes),
     importProvidersFrom(HttpClientModule),
+   
   ],
 });
