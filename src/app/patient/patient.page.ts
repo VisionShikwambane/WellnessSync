@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { homeOutline, radio, library, search, medkitOutline, bandageOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-patient',
@@ -12,7 +14,9 @@ import { IonicModule } from '@ionic/angular';
 })
 export class PatientPage implements OnInit {
 
-  constructor() { }
+  constructor() {
+     addIcons({ radio, library, search, medkitOutline, bandageOutline, homeOutline})
+   }
 
   ngOnInit() {
   }
