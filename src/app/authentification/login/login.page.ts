@@ -57,13 +57,8 @@ export class LoginPage implements OnInit {
   //Loggin in method
   login() {
     if (this.loginForm.valid) {
-      console.log('Username:', this.loginForm.value.username);
-      console.log('Password:', this.loginForm.value.password);
-
-      const loginInfo = {
-        email: this.loginForm.value.username,
-        password: this.loginForm.value.password
-      };
+    
+      const loginInfo = {email: this.loginForm.value.username, password: this.loginForm.value.password};
       
       this.authservice.login(loginInfo).subscribe(
         response => {
@@ -71,7 +66,7 @@ export class LoginPage implements OnInit {
           console.log(token)
           this.serviceJwt.setToken(token);
           var role = this.serviceJwt.decodeUserRoleFromToken(token)
-          if(role === "Patient"){
+                    if(role === "Patient"){
             this.route.navigate(['/patient']);
           }
           else if (role === "Doctor"){
@@ -86,6 +81,7 @@ export class LoginPage implements OnInit {
           await this.alertService.presentErrorToast("bottom", error.error, 1500)
         } 
       );
+      
 
     } 
     else {
