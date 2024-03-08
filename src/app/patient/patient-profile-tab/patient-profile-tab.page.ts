@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
-  selector: 'app-parient-home',
-  templateUrl: './parient-home.page.html',
-  styleUrls: ['./parient-home.page.scss'],
+  selector: 'app-patient-profile-tab',
+  templateUrl: './patient-profile-tab.page.html',
+  styleUrls: ['./patient-profile-tab.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class ParientHomePage implements OnInit {
+export class PatientProfileTabPage implements OnInit {
 
   constructor() { }
 
