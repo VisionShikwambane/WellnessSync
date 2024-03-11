@@ -28,3 +28,87 @@
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value for transparency */
 }
+
+
+.latest-news {
+    padding: 20px;
+  }
+  
+  .latest-news h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .news-item {
+    margin-bottom: 15px;
+  }
+  
+  .news-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .news-description {
+    font-size: 14px;
+  }
+
+  .latest-news-card{
+    height: 150px;
+  }
+  
+
+
+  .patient-header{
+   
+    border-radius: 10px;
+    
+  }
+
+
+  ion-toolbar {
+    height:100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    --background: rgba(0, 0, 0, 0.5) url('https://i.pinimg.com/564x/a6/ac/1d/a6ac1d2c078e0aa6c9250cfc7a8c2b6e.jpg') no-repeat center center / cover;
+    --ion-color-base: transparent; 
+   
+   }
+
+   .patient-home-title{
+    color: rgb(255, 255, 255);
+    font-weight:bolder;
+    font-style: italic;
+    font-size:150%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+   
+   .Welcome-text{
+
+    color: rgb(255, 255, 255);
+    font-weight:bold;
+    font-size:120%;
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 30px;
+    margin-top: 70px;
+   
+   }
+   .not-icon{
+    color: white;
+    font-size: xx-large;
+   }
+
+   .latest-news-card{
+    background-color: rgb(37, 75, 133);
+    color: white;
+   }
+
+   ion-card-title{
+    color: white;
+   }
+   ion-card-subtitle{
+     color: white;
+   }
+   
+ 
+   
+ 

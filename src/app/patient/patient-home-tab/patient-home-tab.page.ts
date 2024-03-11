@@ -24,7 +24,7 @@ export class PatientHomeTabPage implements OnInit {
 
   swiper = new Swiper('.swiper', {
     autoplay: {
-      delay: 5000,
+      delay: 10000,
     },
    });
 

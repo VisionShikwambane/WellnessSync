@@ -1,42 +1,98 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <!-- <ion-icon name="notifications-outline" style="font-size: 170%; position: relative; left: 340px;"></ion-icon> -->
+<ion-header class="patient-header">
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: white;"></ion-menu-button>
+    </ion-buttons>
     <ion-title class="patient-home-title">
-      Hello Vision
+      WellnessSync
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications-outline" class="not-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
 
-  
-  
+
+
 
   <ion-card>
-    <swiper-container [pagination]="true" navigation="false" class="swiper-container" [slidesPerView]="1" [loop]="true" [autoplay]="true">
+    <swiper-container [pagination]="true" navigation="false" class="swiper-container" [slidesPerView]="1" [loop]="true"
+      [autoplay]="true">
       <swiper-slide class="swiperSlide">
-        <img src="https://i.pinimg.com/564x/73/82/68/7382687cf29fba5e51ff09370980f66a.jpg" class="slide-img">
-        <div class="slideText" >
+        <img src="https://i.pinimg.com/564x/6c/21/4a/6c214ae0c85aaaac44e157f77c75bfed.jpg" class="slide-img">
+        <div class="slideText">
           Hello, Vision<br> Wellcome to WellnessSync
         </div>
       </swiper-slide>
       <swiper-slide class="swiperSlide">
-        <img src="https://i.pinimg.com/736x/13/ef/89/13ef8911282d82217fa884321967364e.jpg"  class="slide-img">
-        <div class="slideText" >
-          Hello, Vision<br> Wellcome to WellnessSync
+        <img src="https://i.pinimg.com/736x/13/ef/89/13ef8911282d82217fa884321967364e.jpg" class="slide-img">
+        <div class="slideText">
+         Make a consultation with your doctor
         </div>
       </swiper-slide>
       <swiper-slide class="swiperSlide">
-        <img src="https://i.pinimg.com/564x/50/29/db/5029dbbf2ee4fb545019ccf966c6a991.jpg"  class="slide-img">
-        <div class="slideText" >
-          Hello, Vision<br> Wellcome to WellnessSync
+        <img src="https://i.pinimg.com/564x/7a/23/b8/7a23b842bfe49e535e576038355f8a14.jpg" class="slide-img">
+        <div class="slideText">
+          Book to collect your meds<br>
+          from your local clinic
         </div>
       </swiper-slide>
     </swiper-container>
-   
+
   </ion-card>
 
 
-  
+  <div class="lates-newes-section">
+    <swiper-container [pagination]="true" navigation="false" class="swiper-container" [slidesPerView]="1" [loop]="true"
+      [autoplay]="false">
+      <swiper-slide class="swiperSlide2">
+        <ion-card class="latest-news-card">
+          <ion-card-header>
+            <ion-card-title>Lates news</ion-card-title>
+            <ion-card-subtitle>Kgotso has found a new cure for aids Kgotso has found a new cure for aids Kgotso has found a new cure for aids Kgotso has found a new cure for aids</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+
+      </swiper-slide>
+      <swiper-slide class="swiperSlide2">
+        <ion-card class="latest-news-card">
+          <ion-card-header>
+            <ion-card-title>Latest news</ion-card-title>
+            <ion-card-subtitle>Kgotso has found a new cure for aids Kgotso has found a new cure for aids Kgotso has found a new cure for aids Kgotso has found a new cure for aids Kgotso has found a new cure for aids</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+
+      </swiper-slide>
+      <swiper-slide class="swiperSlide2">
+        <ion-card class="latest-news-card">
+
+          <ion-card-header>
+            <ion-card-title>Latest news</ion-card-title>
+            <ion-card-subtitle>Note: The Clinic will be closed on the 21st of November. Kgotso has found a new cure for aids. Kgotso has found a new cure for aids. Kgotso has found a new cure for aids</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+
 
 </ion-content>
