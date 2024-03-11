@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-icon name="notifications-outline" style="font-size: 170%; position: relative; left: 340px;"></ion-icon>
+    <!-- <ion-icon name="notifications-outline" style="font-size: 170%; position: relative; left: 340px;"></ion-icon> -->
     <ion-title class="patient-home-title">
       Hello Vision
     </ion-title>
@@ -8,77 +8,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
+
   
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
+  
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
+    <swiper-container [pagination]="true" navigation="false" class="swiper-container" [slidesPerView]="1" [loop]="true" [autoplay]="true">
+      <swiper-slide class="swiperSlide">
+        <img src="https://i.pinimg.com/564x/73/82/68/7382687cf29fba5e51ff09370980f66a.jpg" class="slide-img">
+        <div class="slideText" >
+          Hello, Vision<br> Wellcome to WellnessSync
+        </div>
+      </swiper-slide>
+      <swiper-slide class="swiperSlide">
+        <img src="https://i.pinimg.com/736x/13/ef/89/13ef8911282d82217fa884321967364e.jpg"  class="slide-img">
+        <div class="slideText" >
+          Hello, Vision<br> Wellcome to WellnessSync
+        </div>
+      </swiper-slide>
+      <swiper-slide class="swiperSlide">
+        <img src="https://i.pinimg.com/564x/50/29/db/5029dbbf2ee4fb545019ccf966c6a991.jpg"  class="slide-img">
+        <div class="slideText" >
+          Hello, Vision<br> Wellcome to WellnessSync
+        </div>
+      </swiper-slide>
+    </swiper-container>
+   
   </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
+
   
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-  
+
 </ion-content>
