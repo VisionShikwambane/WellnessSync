@@ -2,7 +2,7 @@ import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import {notificationsOutline } from 'ionicons/icons';
+import {notificationsOutline, bookOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import {Swiper} from 'swiper';
 import { register } from 'swiper/element/bundle';
@@ -29,7 +29,7 @@ export class PatientHomeTabPage implements OnInit {
    });
 
   constructor() { 
-    addIcons({ notificationsOutline})
+    addIcons({ notificationsOutline, bookOutline})
   }
 
   ngOnInit() {

@@ -6,6 +6,7 @@
 .swiperSlide {
     position: relative;
     text-align: center;
+    height: 100%;
   }
 
   .slideText {
@@ -109,6 +110,25 @@
      color: white;
    }
    
+   ion-col {
+    background-color:rgb(37, 75, 133);
+    border: solid 1px #fff;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+  
+  }
+
+  .menu-icons{
+    color: white;
+    font-size: xx-large;
+  }
+
+  .consultations-card{
+    background-color: rgb(37, 75, 133);
+    color: white;
+
+  }
  
    
  
