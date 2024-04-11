@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-text-center ion-padding">
-  <ion-avatar class="avatar">
-    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+
+  <ion-avatar class="avatar" id="open-modal">
+    <img alt="Silhouette of a person's head" src={{avatorString}} />
   </ion-avatar>
+
   <div class="profile-info">
     <h2>Vision Shikwambane</h2>
     <p>Email: john.doexample.com</p>
@@ -15,11 +17,24 @@
     <p>Joined: January 2023</p>
     <hr>
     <h3>About Me</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-    <hr> 
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus
+      suscipit tortor eget felis porttitor volutpat.</p>
+    <hr>
     <h3>Interests</h3>
     <p>Programming, Design, Music, Traveling</p>
-    <hr> 
+    <hr>
     <ion-button expand="block" color="primary">Edit Profile</ion-button>
   </div>
+
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+     
+      <div class="block">
+        <ion-img src={{avatorString}}
+          alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+      </div>
+      <ion-button color="light" style="width: 30%; align-self: center;">Upload New</ion-button>
+    </ng-template>
+  </ion-modal>
 </ion-content>
