@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { PatientPage } from './patient.page';
 
 
+
 export const routes: Routes = [
     {
       path: 'patient',
@@ -26,9 +27,11 @@ export const routes: Routes = [
         
       ],
     },
+    
     {
       path: '',
       redirectTo: '/patient/patient-home',
       pathMatch: 'full',
     },
+ 
   ];

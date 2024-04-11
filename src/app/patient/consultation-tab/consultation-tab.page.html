@@ -1,9 +1,7 @@
-<ion-header class="patient-header">
+<ion-header class="patient-consulation-header">
   <ion-toolbar class="header-toolbar">
-    <ion-buttons slot="start">
-      Available Consultations slots
-    </ion-buttons>
     <ion-title class="patient-home-title"> 
+      Available Consultations slots
     </ion-title>
     <ion-buttons slot="end">
       
@@ -12,19 +10,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Search available consultations"></ion-searchbar>
+  <ion-searchbar placeholder="Search available consultations" (ionInput)="filterItems($event)"></ion-searchbar>
   <ion-list>
-    <ion-item>
-      <ion-label>Pokémon Yellow Date: 16 Nov 2023: 14:20-14:25</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pokémon Yellow Date: 16 Nov 2023: 14:20-14:25</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pokémon Yellow Date: 16 Nov 2023: 14:20-14:25</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pokémon Yellow Date: 16 Nov 2023: 14:20-14:25</ion-label>
+    <ion-item *ngFor="let item of filteredConsulations "  (click)="setOpen(true)">
+      <ion-label  >{{ item }}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
   </ion-list>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+ 
 </ion-content>
+
