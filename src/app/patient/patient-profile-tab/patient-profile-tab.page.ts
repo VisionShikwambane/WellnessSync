@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import {pencilOutline} from 'ionicons/icons';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angular/forms';
 
 @Component({
   selector: 'app-patient-profile-tab',
@@ -21,7 +22,7 @@ export class PatientProfileTabPage implements OnInit {
   ngOnInit() {
   }
 
-
+ editForm: any;
 
   avatorString: string = "https://ionicframework.com/docs/img/demos/avatar.svg";
 

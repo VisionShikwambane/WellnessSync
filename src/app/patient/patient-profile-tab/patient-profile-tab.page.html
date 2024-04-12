@@ -23,18 +23,50 @@
     <h3>Interests</h3>
     <p>Programming, Design, Music, Traveling</p>
     <hr>
-    <ion-button expand="block" color="primary">Edit Profile</ion-button>
+    <ion-button expand="block" color="primary" id="open-edit-modal">Edit Profile</ion-button>
   </div>
 
 
   <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
     <ng-template>
-     
+
       <div class="block">
-        <ion-img src={{avatorString}}
-          alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+        <ion-img src={{avatorString}} alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
       </div>
       <ion-button color="light" style="width: 30%; align-self: center;">Upload New</ion-button>
     </ng-template>
   </ion-modal>
+
+
+  <ion-modal trigger="open-edit-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]" class="edit-profile-modal">
+    <ng-template>
+      <div class="block">
+        <ion-list lines="full" class="edit-profile-form">
+          <form class="centered-notes">
+            <ion-item>
+              <ion-input type="text" name="name" required placeholder="Name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" name="surname" required placeholder="Surname"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="tel" name="phoneNumber" required placeholder="Phone number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="email" name="email" required placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" name="password" required placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" name="Confirm Password" required placeholder="Confirm Password"></ion-input>
+            </ion-item>
+          </form>
+        </ion-list>
+
+
+      </div>
+    </ng-template>
+  </ion-modal>
+
 </ion-content>
