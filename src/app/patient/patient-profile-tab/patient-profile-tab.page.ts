@@ -23,6 +23,18 @@ export class PatientProfileTabPage implements OnInit {
   }
 
  editForm: any;
+ isPicModalOpen = false;
+ isUpdateModalOpen = false
+
+
+ openPicModal(isOpen: boolean){
+  this.isPicModalOpen = isOpen;
+ }
+
+ openUpdateModal(isOpen: boolean){
+  this.isUpdateModalOpen = isOpen
+ }
+
 
   avatorString: string = "https://ionicframework.com/docs/img/demos/avatar.svg";
 

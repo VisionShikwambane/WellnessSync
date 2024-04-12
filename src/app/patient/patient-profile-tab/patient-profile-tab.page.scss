@@ -45,7 +45,7 @@
   .patient-profile-title{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    background-color: rgb(37, 75, 133);;
+    background-color: rgb(37, 75, 133);
     color: white;
   }
   
@@ -60,10 +60,6 @@
   
   ion-modal {
     --height: auto;
-  }
-
-  .edit-profile-modal{
-    --height: 80%;
   }
 
   .custom-input {
@@ -90,5 +86,39 @@
   
   .edit-profile-form{
     width: 100%;
-    margin-top: 50%;
+    margin-bottom: 30%;
+  }
+
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: auto;
+  }
+
+  .logo {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .edit-profile-modal {
+    --height: 80%;
+  }
+  
+  .update-button {
+    align-self: center;
+    margin-bottom: auto;
+    width: 50%;
+    --background:  rgb(37, 75, 133);;
+  }
+  
+  .header-toolbar {
+    --background: rgb(37, 75, 133); 
+    color: white;
+    align-items: center;
+  
+  }
+  
+  .edit-button{
+    --background:  rgb(37, 75, 133);;
   }
