@@ -1,8 +1,20 @@
-<ion-header [translucent]="true">
+
+
+
+<ion-header class="patient-header">
   <ion-toolbar class="header-toolbar">
-    <ion-title class="patient-profile-title">My Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: white;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="patient-profile-title">
+      Profile
+    </ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+
 
 <ion-content [fullscreen]="true" class="ion-text-center ion-padding">
 
@@ -11,17 +23,17 @@
   </ion-avatar>
 
   <div class="profile-info">
-    <h2>Vision Shikwambane</h2>
-    <p>Email: john.doexample.com</p>
+    <h2>{{patientProfile?.name}} {{patientProfile?.surname}}</h2>
+    <p>Email: {{patientProfile?.email}}</p>
     <p>Location: New York City</p>
-    <p>Joined: January 2023</p>
+    <p>Phone Number: {{patientProfile?.phoneNumber}}</p>
+    <p>Date Joined: {{patientProfile?.phoneNumber}}</p>
     <hr>
-    <h3>About Me</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus
-      suscipit tortor eget felis porttitor volutpat.</p>
+    <h3>Medical Condition</h3>
+    <p>{{patientProfile?.medicalCondition}}</p>
     <hr>
     <h3>Interests</h3>
-    <p>Programming, Design, Music, Traveling</p>
+    <p>{{patientProfile?.interests}}</p>
     <hr>
     <ion-button expand="block"  class="edit-button" id="open-edit-modal">Edit Profile</ion-button>
   </div>
@@ -58,6 +70,18 @@
               <ion-input type="email" name="email" required placeholder="Email"></ion-input>
             </ion-item>
             <ion-item>
+              <ion-textarea placeholder="Medical Condition"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Medical Condition"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-select name="title" required placeholder="Title">
+                <ion-select-option value="Mr">Mr</ion-select-option>
+                <ion-select-option value="Ms">Ms</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
               <ion-input type="password" name="password" required placeholder="Password"></ion-input>
             </ion-item>
             <ion-item>
@@ -73,3 +97,4 @@
   </ion-modal>
 
 </ion-content>
+

@@ -7,7 +7,6 @@ import {chevronForwardOutline} from 'ionicons/icons';
 import { NavController } from '@ionic/angular'; 
 
 
-
 @Component({
   selector: 'app-consultation-tab',
   templateUrl: './consultation-tab.page.html',

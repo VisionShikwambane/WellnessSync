@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import {pencilOutline} from 'ionicons/icons';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { HttpServiceService } from 'src/app/services/http-service.service';
+
 
 @Component({
   selector: 'app-patient-profile-tab',

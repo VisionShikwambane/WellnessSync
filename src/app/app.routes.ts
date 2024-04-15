@@ -19,7 +19,11 @@ export const routes: Routes = [
   {
     path: 'sign-up',
     loadComponent: () => import('../app/authentification/sign-up/sign-up.page').then((m) => m.SignUpPage),
+  },  {
+    path: 'ion-menu',
+    loadComponent: () => import('./shared/ion-menu/ion-menu.page').then( m => m.IonMenuPage)
   },
+
  
 
 ];

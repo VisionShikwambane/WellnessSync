@@ -7,6 +7,7 @@ import { addIcons } from 'ionicons';
 import {Swiper} from 'swiper';
 import { register } from 'swiper/element/bundle';
 
+
 register();
 
 @Component({

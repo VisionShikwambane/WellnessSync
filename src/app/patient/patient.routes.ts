@@ -3,6 +3,7 @@ import { PatientPage } from './patient.page';
 
 
 
+
 export const routes: Routes = [
     {
       path: 'patient',
