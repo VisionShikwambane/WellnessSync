@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AlertService } from 'src/app/services/alert.service';
 import { AuthService } from '../auth-services/auth.service';
 import { JwtService } from '../auth-services/jwt.service';
@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   username: string = '';
   password: string = '';
   public alertButtons = ['Request OTP'];
-  public alertInputs = [{placeholder: 'Email',}];
+  public alertInputs = [{ placeholder: 'Email', }];
 
 
   constructor(private fb: FormBuilder, private alertService: AlertService, private authservice: AuthService, private serviceJwt: JwtService, private route: Router) {
@@ -33,15 +33,30 @@ export class LoginPage implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-   }
-  
+
+    const token = localStorage.getItem('token');
+    if (token) {
+
+      var role = this.serviceJwt.decodeUserRoleFromToken(token)
+      if (role === "Patient") {
+        this.route.navigate(['/patient']);
+      }
+      else if (role === "Doctor") {
+        this.route.navigate(['/doctor']);
+      }
+      else if (role === "Admin") {
+        this.route.navigate(['/admin']);
+      }
+    }
+  }
+
 
   ngOnInit() {
   }
 
 
 
-  
+
   get usernameControl() {
     return this.loginForm.get('username');
   }
@@ -49,7 +64,7 @@ export class LoginPage implements OnInit {
   get passwordControl() {
     return this.loginForm.get('password');
   }
-  
+
 
 
 
@@ -57,33 +72,28 @@ export class LoginPage implements OnInit {
   //Loggin in method
   login() {
     if (this.loginForm.valid) {
-    
-      const loginInfo = {email: this.loginForm.value.username, password: this.loginForm.value.password};
-      
+      const loginInfo = { email: this.loginForm.value.username, password: this.loginForm.value.password };
       this.authservice.login(loginInfo).subscribe(
         response => {
           const token = (response as any).result as string;
-          console.log(token)
+          //console.log(token)
           this.serviceJwt.setToken(token);
           var role = this.serviceJwt.decodeUserRoleFromToken(token)
-                    if(role === "Patient"){
+          if (role === "Patient") {
             this.route.navigate(['/patient']);
           }
-          else if (role === "Doctor"){
+          else if (role === "Doctor") {
             this.route.navigate(['/doctor']);
           }
-          else if (role === "Admin"){
+          else if (role === "Admin") {
             this.route.navigate(['/admin']);
           }
-          
         },
         async error => {
           await this.alertService.presentErrorToast("bottom", error.error, 1500)
-        } 
+        }
       );
-      
-
-    } 
+    }
     else {
 
       this.alertService.presentAlert("Alert", "", "Please fill in all the login details");
@@ -91,9 +101,9 @@ export class LoginPage implements OnInit {
     }
   }
 
-  async presentAlert(){
+  async presentAlert() {
     this.alertService.presentInputAlert('Enter Email', 'Request OTP', 'Email', (enteredData) => {
-      if(!enteredData[0]){
+      if (!enteredData[0]) {
         this.alertService.presentErrorToast("bottom", "Could not send OTP, write email", 1500)
       }
       console.log('Entered Email:', enteredData[0]);
@@ -101,11 +111,11 @@ export class LoginPage implements OnInit {
 
   }
 
-  googleSignin(){
+  googleSignin() {
 
   }
 
- 
+
 
 
 

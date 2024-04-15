@@ -16,4 +16,10 @@ export class HttpServiceService {
     return this.httpClient.post<any>(`${this.apiUrl}Auth/RegisterUser`, model);
   }
 
+
+  GetPatientProfile(){
+    console.log('Executing Register method');
+    return this.httpClient.get<any>(`${this.apiUrl}Patient/GetPatientProfile`)
+  }
+
 }

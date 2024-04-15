@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import {pencilOutline} from 'ionicons/icons';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angular/forms';
+import { HttpServiceService } from 'src/app/services/http-service.service';
 
 @Component({
   selector: 'app-patient-profile-tab',
@@ -15,16 +16,18 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angul
 })
 export class PatientProfileTabPage implements OnInit {
 
-  constructor() {
+  constructor(private httpService: HttpServiceService) {
     addIcons({pencilOutline});
    }
 
   ngOnInit() {
+    this.loadPatientProfile();
   }
 
  editForm: any;
  isPicModalOpen = false;
  isUpdateModalOpen = false
+ patientProfile: any
 
 
  openPicModal(isOpen: boolean){
@@ -55,6 +58,25 @@ export class PatientProfileTabPage implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
+
+  loadPatientProfile() {
+    this.httpService.GetPatientProfile().subscribe({
+      next: (data) => {
+        this.patientProfile = data;
+        console.log('Patient profile loaded', data);
+      },
+      error: (error) => {
+        console.error('Error fetching patient profile', error);
+      }
+    });
+  }
+
+
+
+  
+
+
 
   
  
