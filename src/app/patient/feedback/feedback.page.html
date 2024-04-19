@@ -1,0 +1,29 @@
+<ion-header class="patient-header">
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: white;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="patient-feedback-title">
+    Give us feedback
+    </ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="feedback-content">
+  <ion-item class="comment-item">
+    <ion-label class="rating-label">How do you rate us?</ion-label>
+    <div class="rating-container">
+      <ion-icon *ngFor="let star of [1, 2, 3, 4, 5]" [name]="star <= selectedStars ? 'star' : 'star-outline'"
+        (click)="selectStar(star)"></ion-icon>
+    </div>
+  </ion-item>
+
+  <ion-item class="comment-item">
+    <ion-label position="floating">Comments</ion-label>
+    <ion-textarea [(ngModel)]="comment" rows="6"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" (click)="submitFeedback()">Submit</ion-button>
+</ion-content>

@@ -46,4 +46,14 @@ export class ConsultationTabPage implements OnInit {
     this.isModalOpen = isOpen;
   }
 
+
+  doctor = {
+    firstName: 'John',
+    lastName: 'Doe',
+    specialty: 'Cardiologist',
+    about: 'Dr. John Doe is a skilled cardiologist with over 10 years of experience...',
+    cellphone: '0781971812'
+    // Add more fields as needed
+  };
+
 }

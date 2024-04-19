@@ -24,7 +24,19 @@ export const routes: Routes = [
         {
             path: 'medicine',
             loadComponent: () => import('../patient/medicine-tab/medicine-tab.page').then((m) => m.MedicineTabPage),
-        }
+        },
+        {
+          path: 'feedback',
+          loadComponent: () => import('./feedback/feedback.page').then( m => m.FeedbackPage)
+        },
+        {
+          path: 'settings',
+          loadComponent: () => import('./settings/settings.page').then( m => m.SettingsPage)
+        },
+        {
+          path: 'help-and-support',
+          loadComponent: () => import('./help-and-support/help-and-support.page').then( m => m.HelpAndSupportPage)
+        },
         
       ],
     },
@@ -33,7 +45,9 @@ export const routes: Routes = [
       path: '',
       redirectTo: '/patient/patient-home',
       pathMatch: 'full',
-    },
+    }
+ 
+
  
 
  

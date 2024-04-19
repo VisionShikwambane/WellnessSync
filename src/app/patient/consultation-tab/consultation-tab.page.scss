@@ -13,15 +13,10 @@
     justify-content: center;
   }
   
-  ion-modal {
-    --height: 400px;
-    
-  }
 
   .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 30%;
   }
   
   .header-toolbar {
@@ -34,3 +29,37 @@
   .book-button{
     --background: rgb(37, 75, 133); 
   }
+
+  /* Add this to your global styles or component-specific styles file */
+
+ion-content {
+  --ion-background-color: #f4f4f4;
+}
+
+ion-label {
+  font-weight: bold;
+}
+
+ion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+ion-item:last-child {
+  border-bottom: none;
+}
+
+ion-button.book-button {
+  margin-top: 20px;
+}
+
+.doctor-profile {
+  margin-top: 20px;
+}
+
+.doctor-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
