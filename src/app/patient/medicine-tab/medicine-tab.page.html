@@ -5,9 +5,153 @@
       <ion-menu-button style="color: white;"></ion-menu-button>
     </ion-buttons>
     <ion-title class="patient-medicine-title">
-      Medicine
+      Appointments
     </ion-title>
     <ion-buttons slot="end">
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content [fullscreen]="true" class="ion-text-center ion-padding">
+  <h1>Appointments Available</h1>
+    <br><br>
+  <ion-card (click)="setOpen(true, 'medicineCollection')">
+    <ion-card-header>
+      <ion-card-title>Medicine Collection</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Make an appointment to collect your medication.
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="setOpen(true, 'diseasePrevention')">
+    <ion-card-header>
+      <ion-card-title>Disease Prevention</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     Schedule a screening for diseases such as HIV, TB, Malaria, etc.
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="setOpen(true, 'abortionServices')">
+    <ion-card-header>
+      <ion-card-title>Abortion Services</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     Note: Patients under 16 years old must be accompanied by a parent or guardian.
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="setOpen(true, 'pregnancy')">
+    <ion-card-header>
+      <ion-card-title>Pregnancy Check-up</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     Available exclusively for pregnant individuals.
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="setOpen(true, 'otherServices')">
+    <ion-card-header>
+      <ion-card-title>Other Services</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Schedule an appointment for services not listed here.
+    </ion-card-content>
+  </ion-card>
+  <ion-modal [isOpen]="isMedicineCollectionModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Available Medicines</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false, 'medicineCollection')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-list>
+          <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-badge slot="end">Quantity(In Packs)</ion-badge>
+          </ion-item>
+          <ion-item *ngFor="let medicine of medicines">
+            <ion-label>{{ medicine.name }}</ion-label>
+            <ion-badge slot="end">{{ medicine.quantity }}</ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal [isOpen]="isDiseasePreventionModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Disease Prevention</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false, 'diseasePrevention')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal [isOpen]="isAbortionSevicesModalUp">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Abortion Services</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false, 'abortionServices')" >Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal [isOpen]="isPregnancyModaUp">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Pregnancy Check-Up</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false, 'pregnancy')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>   
+  <ion-modal [isOpen]="isOtherServiceModalUp">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Other Services</ion-title>
+          <ion-buttons slot="end">
+            <ion-button  (click)="setOpen(false, 'otherServices')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

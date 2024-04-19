@@ -24,7 +24,7 @@ export const routes: Routes = [
         {
             path: 'medicine',
             loadComponent: () => import('../patient/medicine-tab/medicine-tab.page').then((m) => m.MedicineTabPage),
-        },
+        }
         
       ],
     },
@@ -34,5 +34,7 @@ export const routes: Routes = [
       redirectTo: '/patient/patient-home',
       pathMatch: 'full',
     },
+ 
+
  
   ];
