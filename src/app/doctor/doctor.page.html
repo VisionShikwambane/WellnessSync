@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>doctor</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-ion-menu></app-ion-menu>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="doctor-home" href="/doctor/doctor-home">
+      <ion-icon name="home-outline"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button tab="slots"  href="/doctor/slots">
+      <ion-icon name="time-outline"></ion-icon>
+      Slots
+    </ion-tab-button>
+    <!-- <ion-tab-button tab="medicine"  href="/patient/medicine">
+      <ion-icon name="bandage-outline"></ion-icon>
+      Appointmennts
+    </ion-tab-button> -->
+    <ion-tab-button tab="doctor-profile"  href="/doctor/doctor-profile">
+      <ion-icon name="person-outline"></ion-icon>
+      Profile
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">doctor</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
